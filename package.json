@@ -2,11 +2,11 @@
   "name": "simple-cicd-pipeline",
   "version": "1.0.0",
   "description": "Simple web app for CI/CD learning",
-  "main": "src/app.js",
+  "main": "app.js",
   "scripts": {
-    "start": "node src/app.js",
+    "start": "node app.js",
     "test": "jest",
-    "build": "mkdir -p dist && cp src/*.js dist/"
+    "build": "mkdir -p dist && cp *.js dist/ && cp package*.json dist/"
   },
   "dependencies": {
     "express": "^4.18.2"
@@ -16,6 +16,7 @@
     "supertest": "^6.1.6"
   },
   "jest": {
-    "testEnvironment": "node"
+    "testEnvironment": "node",
+    "testPathIgnorePatterns": ["/node_modules/", "/dist/"]
   }
 }
